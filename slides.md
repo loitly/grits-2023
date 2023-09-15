@@ -66,16 +66,22 @@ revealOptions:
 
 #### Automation
 
-![](/img/opsflow.png)
+<p>
+Typical GitOPS workflow
+</p>
+
+
+![](img/opsflow.png)
 
 ---
 
 #### Our Deployment Process
 
-![](/img/opsflow-our.png)
+![](img/opsflow-our.png)
 
 - Manual execution of Jenkins pipeline
 - Publishing chart to local Helm Chart Repository
+
 
 ---
 
