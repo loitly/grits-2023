@@ -2,7 +2,7 @@ version: '3.4'
 services:
   dev:
     image: webpronl/reveal-md
-    command: /slides --watch --port 8000 --css custom.css
+    command: /slides --watch --port 8000
     ports: &ports
       - 8000:8000
       - 35729:35729
@@ -11,5 +11,5 @@ services:
 
   static:
     image: webpronl/reveal-md
-    command: /slides --static docs --css custom.css
+    command: /slides --static docs
     volumes: *vol

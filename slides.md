@@ -132,3 +132,15 @@ Thank You!
 </p>
 
 Any questions?
+
+
+<style>
+  p {
+      font-style: italic;
+      font-size: large;
+  }
+  
+  .reveal h4 {
+      text-transform: unset;
+  }
+</style>
