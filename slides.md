@@ -5,9 +5,23 @@ revealOptions:
   transition: 'zoom'
 ---
 
-#### Introduction to IRSA Kubernetes
+
+### Exploring IRSA Kubernetes
+
+Note: Share our experiences we have while operating Kubernetes in production
+
+Other enhancements we’ve added to make it even better.
+
+---
+
+
+#### What is IRSA Kubernetes
 
 ![](img/cluster.png)
+
+
+Note: On premise kubernetes cluster
+
 
 ---
 
@@ -33,6 +47,12 @@ revealOptions:
  <li> Multiple instances at different commit points
 </div>
 <!-- .element: class="fragment" -->
+
+
+Note: able to see and test the changes
+before they are merged.
+
+Esp useful for UI team
 
 ---
 
@@ -61,6 +81,14 @@ revealOptions:
 - Slack notification
 - Dashboards
 
+Notes:
+<font size=-1>
+Prometheus is an open-source software designed to provide monitoring and alerting functionality for 
+cloud-native environments, including Kubernetes. It collects and stores time series data
+
+Grafana is an open source interactive data-visualization tools which allow users 
+to see their data via charts and graphs
+</font>
 
 ---
 
@@ -73,15 +101,27 @@ Typical GitOPS workflow
 
 ![](img/opsflow.png)
 
+Notes: 
+Kubernetes allow us to adopt modern workflow
+
+Trigger release by merging a branch
+or, advancing a tag.
+
 ---
 
-#### Our Deployment Process
+#### Our Release Process
 
 ![](img/opsflow-our.png)
 
 - Manual execution of Jenkins pipeline
 - Publishing chart to local Helm Chart Repository
 
+
+Notes:
+
+Can also use Helm CLI to manage application deployment independent of the workflow.    
+
+Drill down into a couple of these components to provide more details
 
 ---
 
@@ -95,6 +135,9 @@ Typical GitOPS workflow
 - Automatically build and test on merge
 - Slack notification
 
+Notes:
+Helm provide clean separation between build and deployment
+
 ---
 
 #### What is Argo CD
@@ -105,6 +148,9 @@ It aligns your cluster with Git-based declaratively-defined infrastructure, effe
 </p>
 
 ![](img/argo.png)
+
+Notes:
+Another major addition to our workflow
 
 ---
 
@@ -121,6 +167,11 @@ It aligns your cluster with Git-based declaratively-defined infrastructure, effe
 - Force Sync
 - Update Kubernetes manifest
 - View application logs
+
+Notes:
+Access control.  No need to pass along kubeconfig.
+
+Dynamic updates; scaling
 
 ---
 

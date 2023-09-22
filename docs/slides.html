@@ -17,10 +17,20 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-#### Introduction to IRSA Kubernetes
+
+### Exploring IRSA Kubernetes
+
+<aside class="notes"><p>Share our experiences we have while operating Kubernetes in production</p>
+<p>Other enhancements we’ve added to make it even better.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+
+#### What is IRSA Kubernetes
 
 ![](img/cluster.png)
-</script></section><section  data-markdown><script type="text/template">
+
+
+<aside class="notes"><p>On premise kubernetes cluster</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### Design Objectives
 
 - Multiple tenants
@@ -41,7 +51,12 @@
  <li> Multiple instances at different commit points
 </div>
 <!-- .element: class="fragment" -->
-</script></section><section  data-markdown><script type="text/template">
+
+
+<aside class="notes"><p>able to see and test the changes
+before they are merged.</p>
+<p>Esp useful for UI team</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### Maintenance
 
 - Regular maintenance on the host machines
@@ -65,7 +80,14 @@
 - Slack notification
 - Dashboards
 
-</script></section><section  data-markdown><script type="text/template">
+<aside class="notes"><font size=-1>
+Prometheus is an open-source software designed to provide monitoring and alerting functionality for 
+cloud-native environments, including Kubernetes. It collects and stores time series data
+
+<p>Grafana is an open source interactive data-visualization tools which allow users 
+to see their data via charts and graphs
+</font></p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### Automation
 
 <p>
@@ -74,15 +96,22 @@ Typical GitOPS workflow
 
 
 ![](img/opsflow.png)
-</script></section><section  data-markdown><script type="text/template">
-#### Our Deployment Process
+
+<aside class="notes"><p>Kubernetes allow us to adopt modern workflow</p>
+<p>Trigger release by merging a branch
+or, advancing a tag.</p>
+</aside></script></section><section  data-markdown><script type="text/template">
+#### Our Release Process
 
 ![](img/opsflow-our.png)
 
 - Manual execution of Jenkins pipeline
 - Publishing chart to local Helm Chart Repository
 
-</script></section><section  data-markdown><script type="text/template">
+
+<aside class="notes"><p>Can also use Helm CLI to manage application deployment independent of the workflow.    </p>
+<p>Drill down into a couple of these components to provide more details</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### What is irsajenkins
 
 - Containerized and managed as code in Git
@@ -92,7 +121,9 @@ Typical GitOPS workflow
 - Support Helm (create/publish)
 - Automatically build and test on merge
 - Slack notification
-</script></section><section  data-markdown><script type="text/template">
+
+<aside class="notes"><p>Helm provide clean separation between build and deployment</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### What is Argo CD
 
 <p>
@@ -101,7 +132,9 @@ It aligns your cluster with Git-based declaratively-defined infrastructure, effe
 </p>
 
 ![](img/argo.png)
-</script></section><section  data-markdown><script type="text/template">
+
+<aside class="notes"><p>Another major addition to our workflow</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### Argo CD Dashboard
 
 ![](img/argocd.png)
@@ -113,7 +146,10 @@ It aligns your cluster with Git-based declaratively-defined infrastructure, effe
 - Force Sync
 - Update Kubernetes manifest
 - View application logs
-</script></section><section  data-markdown><script type="text/template">
+
+<aside class="notes"><p>Access control.  No need to pass along kubeconfig.</p>
+<p>Dynamic updates; scaling</p>
+</aside></script></section><section  data-markdown><script type="text/template">
 #### Conclusion
 <p>
 In summary, IRSA Kubernetes offers a robust solution for managing complex deployments across different environments.
